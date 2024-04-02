@@ -30,7 +30,9 @@ class addScreen extends StatelessWidget {
                     TextField(
                       controller: titleController,
                       // minLines: 5,
+
                       decoration: InputDecoration(
+                          hintText: 'Title',
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20))),
                     ),
@@ -41,6 +43,7 @@ class addScreen extends StatelessWidget {
                       controller: notesController,
                       // minLines: 5,
                       decoration: InputDecoration(
+                          hintText: 'Notes',
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20))),
                     ),
@@ -59,6 +62,7 @@ class addScreen extends StatelessWidget {
                                 title: titleController.text,
                                 notes: notesController.text);
                             await getPrvdr.addNotes(notes);
+                            Navigator.pop(context);
                           },
                           child: Text(
                             'Add Notes',

@@ -46,6 +46,7 @@ class _EditNotesState extends State<EditNotes> {
                       controller: titleController,
                       // minLines: 5,
                       decoration: InputDecoration(
+                          hintText: 'Title',
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20))),
                     ),
@@ -56,6 +57,7 @@ class _EditNotesState extends State<EditNotes> {
                       controller: notesController,
                       // minLines: 5,
                       decoration: InputDecoration(
+                          hintText: 'Notes',
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20))),
                     ),
@@ -74,6 +76,7 @@ class _EditNotesState extends State<EditNotes> {
                                 title: titleController.text,
                                 notes: notesController.text);
                             await getPrvdr.editNotes(widget.note.id!, notes);
+                            Navigator.pop(context);
                           },
                           child: Text(
                             'Update Notes',
